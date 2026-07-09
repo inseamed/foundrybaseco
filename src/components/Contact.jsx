@@ -3,6 +3,7 @@ import Icon from "./Icon";
 function Contact() {
   return (
     <section id="contact" className="contact">
+      <span className="eyebrow">Contact</span>
       <h2>Get in Touch</h2>
       <p>Ready to start your project? Reach out to Foundry Co. for a free quote.</p>
 
@@ -33,12 +34,14 @@ function Contact() {
           </div>
         </div>
 
-        <form className="contact-form">
+        <form className="contact-form chamfer">
           <input type="text" name="name" placeholder="Your Name" />
           <input type="email" name="email" placeholder="Your Email" />
           <input type="tel" name="phone" placeholder="Phone Number" />
           <textarea name="message" placeholder="Tell us about your project"></textarea>
-          <button type="submit">Request a Quote</button>
+          <button type="submit" className="btn-primary chamfer-sm">
+            Request a Quote
+          </button>
         </form>
       </div>
     </section>

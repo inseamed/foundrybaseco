@@ -20,22 +20,35 @@ function Hero() {
 
   return (
     <section className="hero">
-      <div className="hero-streak hero-streak-gray-1"></div>
-      <div className="hero-streak hero-streak-orange-1"></div>
-      <div className="hero-streak hero-streak-gray-2"></div>
-      <div className="hero-streak hero-streak-orange-2"></div>
+      <svg
+        className="hero-contours"
+        viewBox="0 0 1200 700"
+        preserveAspectRatio="xMidYMid slice"
+        aria-hidden="true"
+      >
+        <path d="M-50,120 C 200,40 380,220 650,140 S 1050,60 1260,160" />
+        <path d="M-50,230 C 220,150 400,330 660,250 S 1040,170 1260,270" />
+        <path d="M-50,600 C 240,520 420,660 680,600 S 1030,540 1260,610" />
+      </svg>
 
       <div className="hero-inner">
         <div className="hero-content">
-          <h1>Excavation & Site Prep Done Right</h1>
+          <span className="eyebrow">Millville, DE &amp; Surrounding Areas</span>
+          <h1>Excavation &amp; Site Prep Done Right</h1>
           <p>
             Foundry Co. delivers reliable excavation, grading, and site
             preparation for residential and commercial projects across
             Millville, DE and the surrounding area.
           </p>
+          <ul className="hero-flags">
+            <li>Free Estimates Within 24 Hrs</li>
+            <li>Owner On-Site Every Job</li>
+            <li>Licensed &amp; Insured</li>
+          </ul>
         </div>
 
-        <form className="hero-form" onSubmit={handleSubmit}>
+        <form className="hero-form chamfer" onSubmit={handleSubmit}>
+          <span className="hero-form-tag">Work Order — Est. #001</span>
           <h3>Request a Free Quote</h3>
 
           <input
@@ -77,7 +90,9 @@ function Hero() {
             <option value="other">Other</option>
           </select>
 
-          <button type="submit">Get My Free Quote</button>
+          <button type="submit" className="btn-primary chamfer-sm">
+            Get My Free Quote
+          </button>
         </form>
       </div>
     </section>

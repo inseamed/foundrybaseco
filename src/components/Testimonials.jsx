@@ -22,11 +22,12 @@ const testimonials = [
 function Testimonials() {
   return (
     <section id="testimonials" className="testimonials">
+     <span className="eyebrow">Reviews</span>
       <h2>What Our Customers Say</h2>
 
       <div className="testimonials-grid">
         {testimonials.map((t, i) => (
-          <div className="testimonial-card" key={i}>
+          <div className="testimonial-card chamfer-sm" key={i}>
             <p className="testimonial-quote">"{t.quote}"</p>
             <p className="testimonial-name">{t.name}</p>
             <p className="testimonial-location">{t.location}</p>

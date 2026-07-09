@@ -12,9 +12,14 @@ function Navbar() {
         <a href="#contact">Contact</a>
       </div>
 
-      <a href="#contact">
-        <button>Get Quote</button>
-      </a>
+      <div className="navbar-actions">
+        <a className="navbar-phone" href="tel:+13028583224">
+          (302) 858-3224
+        </a>
+        <a href="#contact">
+          <button className="btn-primary chamfer-sm">Get Quote</button>
+        </a>
+      </div>
     </nav>
   );
 }

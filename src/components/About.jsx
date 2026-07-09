@@ -7,6 +7,7 @@ const stats = [
 function About() {
   return (
     <section id="about" className="about">
+      <span className="eyebrow">Since 2014</span>
       <h2>About Us</h2>
       <p>
         Foundry Co. has been providing reliable excavation and site

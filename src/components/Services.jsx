@@ -30,6 +30,7 @@ const services = [
 function Services() {
   return (
     <section id="services" className="services">
+      <span className="eyebrow">What We Do</span>
       <h2>Our Services</h2>
 
       <div className="services-list">
@@ -40,7 +41,7 @@ function Services() {
             }`}
             key={service.title}
           >
-            <div className="service-block-visual">
+            <div className="service-block-visual chamfer">
               <Icon name={service.icon} className="service-block-icon" />
             </div>
             <div className="service-block-content">
