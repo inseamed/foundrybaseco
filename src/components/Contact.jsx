@@ -4,7 +4,7 @@ function Contact() {
   return (
     <section id="contact" className="contact">
       <h2>Get in Touch</h2>
-      <p>Ready to start your project? Reach out to us for a free quote.</p>
+      <p>Ready to start your project? Reach out to Foundry Co. for a free quote.</p>
 
       <div className="contact-grid">
         <div className="contact-info">

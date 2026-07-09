@@ -9,9 +9,10 @@ function About() {
     <section id="about" className="about">
       <h2>About Us</h2>
       <p>
-        Excavate Co. has been providing reliable excavation and site
-        preparation services for years. We bring the right equipment,
-        experience, and attention to detail to every job, big or small.
+        Foundry Co. has been providing reliable excavation and site
+        preparation services for over a decade. We bring the right
+        equipment, experience, and attention to detail to every job,
+        big or small.
       </p>
 
       <div className="about-stats">

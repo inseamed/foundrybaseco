@@ -48,7 +48,7 @@
 .hero {
   position: relative;
   background: var(--color-dark);
-  min-height: 520px;
+  min-height: 560px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -94,11 +94,17 @@
   opacity: 0.85;
 }
 
-.hero-content {
+.hero-inner {
   position: relative;
   z-index: 2;
-  padding: 0 60px;
-  max-width: 640px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  padding: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .hero-content h1 {
@@ -108,26 +114,69 @@
 
 .hero-content p {
   color: var(--color-steel-light);
-  margin-bottom: 24px;
   max-width: 480px;
 }
 
-.hero-content button {
+.hero-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--color-dark-secondary);
+  border: 1px solid var(--color-steel);
+  border-radius: 8px;
+  padding: 28px;
+}
+
+.hero-form h3 {
+  color: var(--color-offwhite);
+  margin-bottom: 6px;
+}
+
+.hero-form input,
+.hero-form select {
+  background: var(--color-dark);
+  border: 1px solid var(--color-steel);
+  border-radius: 5px;
+  padding: 12px 14px;
+  color: var(--color-offwhite);
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+.hero-form input::placeholder {
+  color: var(--color-steel-light);
+}
+
+.hero-form input:focus,
+.hero-form select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.hero-form button {
   background: var(--color-accent);
   color: var(--color-offwhite);
   border: none;
-  padding: 14px 30px;
+  padding: 14px;
   border-radius: 5px;
   font-weight: bold;
   font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  font-size: 15px;
+  font-size: 14px;
 }
 
-.hero-content button:hover {
+.hero-form button:hover {
   background: var(--color-accent-dark);
 }
+
+@media (max-width: 780px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    padding: 40px 24px;
+  }
+}
+
 .trust-badges {
   display: flex;
   justify-content: center;
@@ -162,49 +211,85 @@
 .services h2 {
   color: var(--color-dark);
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
-.services-grid {
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.service-block {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  align-items: center;
 }
 
-.service-card {
-  background: white;
-  border: 1px solid var(--color-steel-light);
+.service-block-reverse {
+  grid-template-columns: 1fr 220px;
+}
+
+.service-block-reverse .service-block-visual {
+  order: 2;
+}
+
+.service-block-reverse .service-block-content {
+  order: 1;
+}
+
+.service-block-visual {
+  background: var(--color-dark);
   border-radius: 8px;
-  padding: 28px 24px;
-  text-align: left;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.service-card-icon {
-  width: 32px;
-  height: 32px;
+.service-block-icon {
+  width: 64px;
+  height: 64px;
   color: var(--color-accent);
-  margin-bottom: 16px;
 }
 
-.service-card h3 {
+.service-block-content h3 {
   color: var(--color-dark);
   margin-bottom: 10px;
 }
 
-.service-card p {
+.service-block-content p {
   color: var(--color-dark-secondary);
-  font-size: 14px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
-.service-card-link {
+.service-block-link {
   color: var(--color-accent);
   font-weight: 600;
   font-size: 14px;
 }
 
-.service-card-link:hover {
+.service-block-link:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .service-block,
+  .service-block-reverse {
+    grid-template-columns: 1fr;
+  }
+  .service-block-visual,
+  .service-block-reverse .service-block-visual {
+    order: 0;
+    aspect-ratio: 16 / 9;
+    max-width: 200px;
+  }
+  .service-block-reverse .service-block-content {
+    order: 0;
+  }
 }
 
 .projects {
@@ -256,6 +341,50 @@
   color: var(--color-steel-light);
   font-size: 14px;
 }
+
+.testimonials {
+  padding: 80px 60px;
+  background: var(--color-offwhite);
+}
+
+.testimonials h2 {
+  color: var(--color-dark);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: white;
+  border: 1px solid var(--color-steel-light);
+  border-radius: 8px;
+  padding: 28px 24px;
+}
+
+.testimonial-quote {
+  color: var(--color-dark-secondary);
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.testimonial-name {
+  color: var(--color-dark);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.testimonial-location {
+  color: var(--color-steel);
+  font-size: 13px;
+}
+
 .about {
   padding: 80px 60px;
   background: var(--color-offwhite);
